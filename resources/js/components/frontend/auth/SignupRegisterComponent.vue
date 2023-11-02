@@ -1,5 +1,5 @@
 <template>
-    <LoadingComponent :props="loading" />
+    <LoadingComponent :props="loading"/>
     <section class="pt-8 pb-16">
         <div class="container max-w-[550px] py-6 p-4 sm:px-6 shadow-xs rounded-2xl bg-white">
             <h2 class="capitalize mb-6 text-center text-[22px] font-semibold leading-[34px] text-heading">
@@ -10,7 +10,7 @@
                     <div class="col-12 sm:col-6">
                         <label class="text-sm capitalize mb-1 text-heading">{{ $t('label.first_name') }}</label>
                         <input type="text" v-model="props.form.first_name"
-                            class="w-full h-12 rounded-lg border px-4 border-[#D9DBE9]">
+                               class="w-full h-12 rounded-lg border px-4 border-[#D9DBE9]">
                         <small class="db-field-alert" v-if="errors.first_name">
                             {{ errors.first_name[0] }}
                         </small>
@@ -18,7 +18,7 @@
                     <div class="col-12 sm:col-6">
                         <label class="text-sm capitalize mb-1 text-heading">{{ $t('label.last_name') }}</label>
                         <input type="text" v-model="props.form.last_name"
-                            class="w-full h-12 rounded-lg border px-4 border-[#D9DBE9]">
+                               class="w-full h-12 rounded-lg border px-4 border-[#D9DBE9]">
                         <small class="db-field-alert" v-if="errors.last_name">
                             {{ errors.last_name[0] }}
                         </small>
@@ -26,7 +26,7 @@
                     <div class="col-12 sm:col-6">
                         <label class="text-sm capitalize mb-1 text-heading">{{ $t('label.email') }}</label>
                         <input type="email" v-model="props.form.email"
-                            class="w-full h-12 rounded-lg border px-4 border-[#D9DBE9]">
+                               class="w-full h-12 rounded-lg border px-4 border-[#D9DBE9]">
                         <small class="db-field-alert" v-if="errors.email">
                             {{ errors.email[0] }}
                         </small>
@@ -34,14 +34,14 @@
                     <div class="col-12 sm:col-6">
                         <label class="text-sm capitalize mb-1 text-heading">{{ $t('label.password') }}</label>
                         <input type="password" v-model="props.form.password"
-                            class="w-full h-12 rounded-lg border px-4 border-[#D9DBE9]">
+                               class="w-full h-12 rounded-lg border px-4 border-[#D9DBE9]">
                         <small class="db-field-alert" v-if="errors.password">
                             {{ errors.password[0] }}
                         </small>
                     </div>
                     <div class="col-12">
                         <button type="submit"
-                            class="w-full h-12 text-center capitalize font-medium rounded-3xl text-white bg-primary">
+                                class="w-full h-12 text-center capitalize font-medium rounded-3xl text-white bg-primary">
                             {{ $t('button.sign_up') }}
                         </button>
                     </div>
@@ -58,7 +58,7 @@ import alertService from "../../../services/alertService";
 
 export default {
     name: "SignupRegisterComponent",
-    components: { LoadingComponent },
+    components: {LoadingComponent},
     data() {
         return {
             loading: {
@@ -90,9 +90,9 @@ export default {
             const otp = this.$store.getters['frontendSignup/phone'];
             if (Object.keys(otp).length > 0) {
                 this.props.form.phone = otp.otp.phone;
-                this.props.form.country_code = otp.otp.code;
+                this.props.form.country_code = otp.otp.phone;
             } else {
-                this.$router.push({ name: 'auth.signupPhone' });
+                this.$router.push({name: 'auth.signupPhone'});
             }
         },
         save: function () {
@@ -114,14 +114,14 @@ export default {
                             phone: "",
                         };
                         if (this.carts.length > 0) {
-                            this.$router.push({ name: "frontend.checkout" });
+                            this.$router.push({name: "frontend.checkout"});
                         } else {
-                            this.$router.push({ name: "frontend.home" });
+                            this.$router.push({name: "frontend.home"});
                         }
                     }).catch((err) => {
                         this.loading.isActive = false;
                         alertService.success(res.data.message);
-                        this.$router.push({ name: "auth.login" });
+                        this.$router.push({name: "auth.login"});
                     });
                 }).catch((err) => {
                     this.loading.isActive = false;

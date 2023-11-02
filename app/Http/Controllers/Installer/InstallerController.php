@@ -55,26 +55,9 @@ class InstallerController extends Controller
 
     public function licenseStore(Request $request)
     {
-        $rules     = config('installer.license.form.rules');
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return redirect(route('installer.license'))->withErrors($validator)->withInput();
-        }
 
-        try {
-            $response = $this->installerService->licenseCodeChecker($request->all());
-            if (isset($response->status) && $response->status) {
-                $envService = new EnvEditor();
-                $envService->addData([
-                    'MIX_API_KEY' => $request->license_key,
-                ]);
                 return redirect(route('installer.site'));
-            } else {
-                return redirect(route('installer.license'))->withErrors(['global' => $response->message])->withInput();
-            }
-        } catch (Exception $e) {
-            return redirect(route('installer.license'))->withErrors(['global' => $e->getMessage()])->withInput();
-        }
+          
     }
 
     public function site(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application

@@ -81,9 +81,9 @@
                         <td class="db-table-body-td hidden-print"
                             v-if="permissionChecker('push-notifications_show') || permissionChecker('push-notifications_delete')">
                             <div class="flex justify-start items-center sm:items-start sm:justify-start gap-1.5">
-                                <SmIconViewComponent :link="'admin.push-notification.show'" :id="pushNotification.id"
+                                <SmViewComponent :link="'admin.push-notification.show'" :id="pushNotification.id"
                                     v-if="permissionChecker('push-notifications_show')" />
-                                <SmIconDeleteComponent @click="destroy(pushNotification.id)"
+                                <SmDeleteComponent @click="destroy(pushNotification.id)"
                                     v-if="permissionChecker('push-notifications_delete')" />
                             </div>
                         </td>
@@ -111,9 +111,9 @@ import PaginationSMBox from "../components/pagination/PaginationSMBox";
 import appService from "../../../services/appService";
 import statusEnum from "../../../enums/modules/statusEnum";
 import TableLimitComponent from "../components/TableLimitComponent";
-import SmIconDeleteComponent from "../components/buttons/SmIconDeleteComponent";
+import SmDeleteComponent from "../components/buttons/SmDeleteComponent";
 import SmModalEditComponent from "../components/buttons/SmModalEditComponent";
-import SmIconViewComponent from "../components/buttons/SmIconViewComponent";
+import SmViewComponent from "../components/buttons/SmViewComponent";
 import FilterComponent from "../components/buttons/collapse/FilterComponent";
 import ExportComponent from "../components/buttons/export/ExportComponent";
 import PrintComponent from "../components/buttons/export/PrintComponent";
@@ -128,9 +128,9 @@ export default {
         PaginationTextComponent,
         PushNotificationCreateComponent,
         LoadingComponent,
-        SmIconDeleteComponent,
+        SmDeleteComponent,
         SmModalEditComponent,
-        SmIconViewComponent,
+        SmViewComponent,
         FilterComponent,
         ExportComponent,
         PrintComponent,

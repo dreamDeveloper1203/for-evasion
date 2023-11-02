@@ -46,15 +46,7 @@ class OfferService
             return Offer::with('items')->where(function ($query) use ($requests) {
                 foreach ($requests as $key => $request) {
                     if (in_array($key, $this->offerFilter)) {
-                        if ($key == "start_date") {
-                            $start_date  = Date('Y-m-d', strtotime($request));
-                            $query->whereDate($key, '>=', $start_date);
-                        } else if ($key == "end_date") {
-                            $end_date  = Date('Y-m-d', strtotime($request));
-                            $query->whereDate($key, '<=', $end_date);
-                        } else {
-                            $query->where($key, 'like', '%' . $request . '%');
-                        }
+                        $query->where($key, 'like', '%' . $request . '%');
                     }
 
                     if (in_array($key, $this->exceptFilter)) {

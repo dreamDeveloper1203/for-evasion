@@ -22,7 +22,6 @@
         "loveycom/cashfree": "^2.1",
         "maatwebsite/excel": "^3.1",
         "mollie/laravel-mollie": "^2.23",
-        "obydul/laraskrill": "*",
         "pragmarx/countries": "^0.8.2",
         "razorpay/razorpay": "^2.8",
         "santigraviano/laravel-mercadopago": "^1.0",

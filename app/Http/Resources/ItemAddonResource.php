@@ -8,8 +8,6 @@ use App\Libraries\AppLibrary;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-use function PHPUnit\Framework\isNull;
-
 class ItemAddonResource extends JsonResource
 {
 
@@ -27,7 +25,7 @@ class ItemAddonResource extends JsonResource
     {
         $this->variation = $this->variationTotal();
         $price           = $this?->addonItem?->price;
-        $offer           = $this->addonItem?->offer?->filter(function ($offer) use ($price) {
+        $offer           = $this->addonItem->offer->filter(function ($offer) use ($price) {
             if (Carbon::now()->between(
                 $offer->start_date,
                 $offer->end_date
@@ -39,9 +37,6 @@ class ItemAddonResource extends JsonResource
                 return $offer;
             }
         });
-        if (isNull($offer)) {
-            $offer = [];
-        }
         $total           = $this->variation?->price + (count($offer) ? $offer[0]->convert_price : $this->addonItem?->price);
         return [
             'id'                             => $this->id,
@@ -63,11 +58,11 @@ class ItemAddonResource extends JsonResource
             "total_flat_price"               => AppLibrary::flatAmountFormat($total),
             "total_convert_price"            => AppLibrary::convertAmountFormat($total),
             "total_currency_price"           => AppLibrary::currencyAmountFormat($total),
-            'variation_names'                => $this->variation?->name,
-            "thumb"                          => $this->addonItem?->thumb,
-            "cover"                          => $this->addonItem?->cover,
-            "preview"                        => $this->addonItem?->preview,
-            "caution"                        => optional($this->addonItem?->caution) == null ? '' : optional(
+            'variation_names'                => $this->variation->name,
+            "thumb"                          => $this->addonItem->thumb,
+            "cover"                          => $this->addonItem->cover,
+            "preview"                        => $this->addonItem->preview,
+            "caution"                        => optional($this->addonItem->caution) == null ? '' : optional(
                 $this->addonItem
             )->caution,
             "offer"                          => SimpleOfferResource::collection($offer)
@@ -76,7 +71,7 @@ class ItemAddonResource extends JsonResource
 
     private function variationTotal()
     {
-        $variationArray = $this->addonItem?->variations?->mapWithKeys(function ($variation) {
+        $variationArray = $this->addonItem->variations->mapWithKeys(function ($variation) {
             return [$variation->id => $variation];
         });
         if ($this->addon_item_variation) {

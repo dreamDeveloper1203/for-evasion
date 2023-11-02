@@ -10,7 +10,7 @@
                     </div>
                     <div>
                         <h3 class="font-medium text-white">{{ $t('label.total_sales') }}</h3>
-                        <h4 class="font-semibold text-[22px] leading-[34px] text-white">{{ total_sales }}</h4>
+                        <h4 class="font-semibold text-[22px] leading-[34px] text-white">${{ total_sales }}</h4>
                     </div>
                 </div>
             </div>

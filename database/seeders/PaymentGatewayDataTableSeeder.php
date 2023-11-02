@@ -305,54 +305,6 @@ class PaymentGatewayDataTableSeeder extends Seeder
                 ],
             ]
         ],
-        [
-            "slug"    => "payfast",
-            "status"  => Activity::ENABLE,
-            "options" => [
-                [
-                    "option" => 'payfast_merchant_id',
-                    "value"  => '10004002',
-                ],
-                [
-                    "option" => 'payfast_merchant_key',
-                    "value"  => 'q1cd2rdny4a53',
-                ],
-                [
-                    "option" => 'payfast_passphrase',
-                    "value"  => 'payfast',
-                ],
-                [
-                    "option" => 'payfast_mode',
-                    "value"  => GatewayMode::SANDBOX,
-                ],
-                [
-                    "option" => 'payfast_status',
-                    "value"  => Activity::ENABLE,
-                ],
-            ]
-        ],
-        [
-            "slug"    => "skrill",
-            "status"  => Activity::ENABLE,
-            "options" => [
-                [
-                    "option" => 'skrill_merchant_email',
-                    "value"  => 'demoqco@sun-fish.com',
-                ],
-                [
-                    "option" => 'skrill_merchant_api_password',
-                    "value"  => '60cede4a5aee9a3827f212ba45f88c61',
-                ],
-                [
-                    "option" => 'skrill_mode',
-                    "value"  => GatewayMode::SANDBOX,
-                ],
-                [
-                    "option" => 'skrill_status',
-                    "value"  => Activity::ENABLE,
-                ],
-            ]
-        ]
     ];
 
     public function run(): void

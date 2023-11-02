@@ -34,7 +34,7 @@ class TaxRequest extends FormRequest
                 'required',
                 'string',
                 'max:20',
-                Rule::unique("taxes", "code")->ignore($this->route('tax.id'))
+                Rule::unique("taxes", "code")->whereNull('deleted_at')->ignore($this->route('tax.id'))
             ],
             'tax_rate' => ['required', 'numeric', 'min:0', 'max:9999999999999'],
             'status'   => ['required', 'numeric', 'max:24'],

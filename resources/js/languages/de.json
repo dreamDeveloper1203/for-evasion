@@ -472,7 +472,6 @@
         "paytm_status": "Paytm-Status",
         "razorpay_key" : "Razorpay-Schlüssel",
         "razorpay_secret" : "Razorpay-Geheimnis",
-        "razorpay_mode" : "Razorpay-modus",
         "razorpay_status" : "Razorpay-Status",
         "mercadopago_client_id": "Mercadopago-Client-ID",
         "mercadopago_client_secret": "Mercadopago-Client-Geheimnis",
@@ -491,16 +490,7 @@
         "msg91_sender_id": "MSG91-Absender-ID",
         "msg91_status": "MSG91-Status",
         "total_tax" : "Totale belasting",
-        "including" : "Inbegrepen",
-        "payfast_merchant_id": "Payfast-Händler-ID",
-        "payfast_merchant_key": "Payfast-Händlerschlüssel",
-        "payfast_passphrase": "Payfast-Passphrase",
-        "payfast_mode": "Payfast-Modus",
-        "payfast_status": "Payfast-Status",
-        "skrill_merchant_email": "Skrill-Händler-E-Mail",
-        "skrill_merchant_api_password": "Skrill-Händler-API-Passwort",
-        "skrill_mode": "Skrill Modus",
-        "skrill_status": "Skrill-Status"
+        "including" : "Inbegrepen"
     },
     "button": {
         "add": "Hinzufügen",

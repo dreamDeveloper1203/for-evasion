@@ -66,11 +66,7 @@ class FrontendOrderService
                 $query->where('user_id', auth()->user()->id);
                 foreach ($requests as $key => $request) {
                     if (in_array($key, $this->frontendOrderFilter)) {
-                        if ($key === "status") {
-                            $query->where($key, (int)$request);
-                        } else {
-                            $query->where($key, 'like', '%' . $request . '%');
-                        }
+                        $query->where($key, 'like', '%' . $request . '%');
                     }
                     if (in_array($key, $this->exceptFilter)) {
                         $explodes = explode('|', $request);

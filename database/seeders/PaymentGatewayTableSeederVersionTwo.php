@@ -398,7 +398,7 @@ class PaymentGatewayTableSeederVersionTwo extends Seeder
                     ]
                 ]
             ]
-        ]
+        ],
     ];
 
     public function run(): void

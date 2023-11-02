@@ -472,7 +472,6 @@
         "paytm_status": "পেটিএম স্ট্যাটাস",
         "razorpay_key" : "রেজারপে কী",
         "razorpay_secret" : "রেজারপে সিক্রেট",
-        "razorpay_mode" : "রেজারপে মোড",
         "razorpay_status" : "রেজারপে স্ট্যাটাস",
         "mercadopago_client_id": "মারকাডোপ্যাগো ক্লায়েন্ট আইডি",
         "mercadopago_client_secret": "মারকাডোপ্যাগো ক্লায়েন্ট সিক্রেট",
@@ -491,16 +490,7 @@
         "msg91_sender_id" : "এমএসজিনিনেটিওয়ান  প্রেরক আইডি",
         "msg91_status" : "এমএসজিনিনেটিওয়ান  স্ট্যাটাস",
         "total_tax" : "মোট ট্যাক্স",
-        "including" : "সহ",
-        "payfast_merchant_id": "পেফাস্ট মার্চেন্ট আইডি",
-        "payfast_merchant_key": "পেফাস্ট মার্চেন্ট কী",
-        "payfast_passphrase": "পেফাস্ট পাসফ্রেজ",
-        "payfast_mode": "পেফাস্ট মোড",
-        "payfast_status": "পেফাস্ট স্ট্যাটাস",
-        "skrill_merchant_email": "স্ক্রিল মার্চেন্ট ইমেইল",
-        "skrill_merchant_api_password": "স্ক্রিল মার্চেন্ট এপিআই পাসওয়ার্ড",
-        "skrill_mode": "স্ক্রিল মোড",
-        "skrill_status": "স্ক্রিল স্ট্যাটাস"
+        "including" : "সহ"
     },
     "button": {
         "add": "যোগ করুন",
